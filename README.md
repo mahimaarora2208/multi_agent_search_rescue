@@ -93,7 +93,7 @@ The below link contains combined notes of sprint 1,2 and 3.
 ### Build Instructions and running package
 ```
 cd <your_catkin_ws>/src
-https://github.com/mahimaarora2208/multi_agent_search_rescue
+https://github.com/mahimaarora2208/multi_agent_search_rescue.git
 cd ..   
 rosdep install -i --from-path src --rosdistro noetic -y
 catkin_make
