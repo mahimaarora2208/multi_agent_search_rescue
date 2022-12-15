@@ -35,7 +35,7 @@ Abhinav Garg | Driver | Design Keeper | Design Keeper
 
 - OS : Ubuntu 20.04 
 - ROS Distro : ROS Noetic
-- Package build type : ```ament_cmake ```
+- Package build type : ```catkin ```
 - Package dependencies : ```rclcpp```, ```std_msgs``` 
 - ROS Noetic Installation : [link](http://wiki.ros.org/noetic)
 
