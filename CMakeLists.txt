@@ -127,7 +127,6 @@ include
 include_directories(
  include
   ${catkin_INCLUDE_DIRS}
-  # ${OpenCV_INCLUDE_DIRS}
 )
 
 add_executable(finder src/main.cpp src/swat.cpp src/threats.cpp)
@@ -220,3 +219,19 @@ target_link_libraries(finder ${catkin_LIBRARIES})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+# Add rostest gtest 
+if(CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+  add_rostest_gtest(
+  finder_test
+  test/finder_test.test
+  src/main.cpp
+  src/swat.cpp
+  src/threats.cpp
+  )
+  target_link_libraries(finder_test ${catkin_LIBRARIES} )
+
+
+  add_dependencies( finder_test finder ${catkin_EXPORTED_TARGETS} )
+endif()
