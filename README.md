@@ -1,7 +1,7 @@
 # Final Project - Multi-Agent Search Rescue
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-![CICD Workflow status](https://github.com/mahimaarora2208/multi_agent_search_rescue/actions/workflows/build_and_coveralls.yml/badge.svg)
-[![codecov](https://codecov.io/gh/mahimaarora2208/my-ros2-codecov-exp/branch/main/graph/badge.svg?token=AEULJJEMWV)](https://codecov.io/gh/mahimaarora2208/multi_agent_search_rescue)
+![CICD Workflow status](https://github.com/mahimaarora2208/multi_agent_hostage_rescue/actions/workflows/build_and_coveralls.yml/badge.svg)
+
+[![codecov](https://codecov.io/gh/mahimaarora2208/my-ros2-codecov-exp/branch/main/graph/badge.svg?token=AEULJJEMWV)](https://codecov.io/gh/mahimaarora2208/multi_agent_hostage_rescue)
 
 ## Project Description 
 ## Overview
@@ -90,26 +90,29 @@ The below link contains combined notes of sprint 1,2 and 3.
 * Cppcheck results can be found in results folder
 * Cpplint results can be found in results folder
 ## How to Run the ROS Package
-### Build Instructions
+### Build Instructions and running package
 ```
-cd <your_ROS2_ws>/src
-git clone https://github.com/mahimaarora2208/multi_agent_hostage_rescue.git
+cd <your_catkin_ws>/src
+https://github.com/mahimaarora2208/multi_agent_search_rescue
 cd ..   
-rosdep install -i --from-path src --rosdistro galactic -y
-colcon build --packages-select multi_agent_hostage_rescue
-source . install/setup.bash
-source ~/<your ROS2 installation>/opt/ros/galactic/setup.bash
+rosdep install -i --from-path src --rosdistro noetic -y
+catkin_make
+source devel/setup.bash
+
+roslaunch multi_agent_hostage_rescue main.launch
+
+```
+Open a new terminal and source it. To run the finder node:
+
+```
+rosrun multi_agent_hostage_rescue finder
 ```
 
 ### ROS Run TESTS
 Run the following commands to test your test cases:
 ```
-colcon build --packages-select multi_agent_hostage_rescue
-source install/setup.bash
-colcon test --packages-select multi_agent_hostage_rescue
-colcon test --event-handlers console_direct+ --packages-select multi_agent_hostage_rescue 
-colcon test-result --test-result-base build/multi_agent_hostage_rescue
-echo $?
+catkin_make run_tests -i
+
 ```
 
 ## To Generate and Check code coverage
