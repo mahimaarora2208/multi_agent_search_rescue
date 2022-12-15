@@ -1,6 +1,6 @@
 /************************************************************************************
  * Apache Liscence 2.0
- * Copyright (c) 2021, Mahima Arora
+ * Copyright (c) 2021, Mahima Arora , Naveen Mangla, Abhinav Garg
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -31,7 +31,7 @@
  ************************************************************************************/
 /**
  * @file test.cpp
- * @author Mahima Arora (marora1@umd.edu)
+ * @author Mahima Arora , Naveen Mangla, Abhinav Garg
  *
  * @brief Test cases for functions
  * @version 1.0
@@ -118,14 +118,7 @@ TEST(Base__Functionality, tf_broadcaster_test) {
 // ----------------------------------------------------------------
 
 TEST(ROS_Functionality, publisher_test) {
-  // node_ = rclcpp::Node::make_shared("test_publisher");
-  //   auto test_pub = this->create_publisher<std_msgs::msg::String>
-  //                     ("chatter", 10.0);
 
-  //   auto num_pub = this->count_publishers("chatter");
-
-  //   RCLCPP_DEBUG_STREAM(rclcpp::get_logger("rclcpp"),
-  //                         "Output String:" << static_cast<int>(num_pub));
   bool pub_chatter = true;
   EXPECT_TRUE(pub_chatter);
 }
