@@ -46,7 +46,11 @@
 
 #include <ros/ros.h>
 #include <gtest/gtest.h>
-#include <memory>
+
+
+#include <robot.hpp>
+#include <swat.hpp>
+#include <threats.hpp>
 
 #include <utility>
 
@@ -131,9 +135,9 @@ TEST(ROS_Functionality, subscriber_test) {
   EXPECT_TRUE(sub_chatter);
 }
 
-// int main(int argc, char** argv) {
-//   ros::init(argc, argv, "main_rostest");
-//   nh.reset(new ros::NodeHandle);
-//   testing::InitGoogleTest(&argc, argv);
-//   return RUN_ALL_TESTS();
-// }
+int main(int argc, char** argv) {
+  ros::init(argc, argv, "finder_test");
+  nh.reset(new ros::NodeHandle);
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}

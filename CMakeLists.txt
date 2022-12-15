@@ -132,11 +132,11 @@ include
 )
 
 
-add_executable(finder src/main.cpp src/swat.cpp )
+add_executable(finder src/main.cpp src/swat.cpp src/threats.cpp)
 target_link_libraries(finder ${catkin_LIBRARIES})
 
-add_executable(threats src/threats.cpp )
-target_link_libraries(threats ${catkin_LIBRARIES})
+# add_executable(threats src/main.cpp src/swat.cpp src/threats.cpp )
+# target_link_libraries(threats ${catkin_LIBRARIES})
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -223,29 +223,18 @@ target_link_libraries(threats ${catkin_LIBRARIES})
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-
 # Add rostest gtest 
-
-#############
-## Testing ##
-#############
-
 if(CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
-  add_rostest_gtest(main_rostest
-    test/main_test.test
-    test/test.cpp
-    src/threats.cpp
-    src/swat.cpp
-    # test/navigation_test.cpp
-    # test/detect_object_test.cpp
-    # test/grasp_object_test.cpp
-    # test/object_spawner_test.cpp
+  add_rostest_gtest(
+  finder_test
+  test/finder_test.test
+  src/main.cpp
+  src/swat.cpp
+  src/threats.cpp
   )
+  target_link_libraries(finder_test ${catkin_LIBRARIES} )
 
-  target_link_libraries(main_rostest
-    ${catkin_LIBRARIES}
 
-  )
-  add_dependencies( main_rostest finder ${catkin_EXPORTED_TARGETS} )
+  add_dependencies( finder_test finder ${catkin_EXPORTED_TARGETS} )
 endif()

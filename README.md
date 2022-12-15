@@ -1,7 +1,7 @@
 # Final Project - Multi-Agent Search Rescue
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-![CICD Workflow status](https://github.com/mahimaarora2208/multi_agent_search_rescue/actions/workflows/build_and_coveralls.yml/badge.svg)
-[![codecov](https://codecov.io/gh/mahimaarora2208/my-ros2-codecov-exp/branch/main/graph/badge.svg?token=AEULJJEMWV)](https://codecov.io/gh/mahimaarora2208/multi_agent_search_rescue)
+![CICD Workflow status](https://github.com/mahimaarora2208/multi_agent_hostage_rescue/actions/workflows/build_and_coveralls.yml/badge.svg)
+[![codecov](https://codecov.io/gh/mahimaarora2208/my-ros2-codecov-exp/branch/main/graph/badge.svg?token=AEULJJEMWV)](https://codecov.io/gh/mahimaarora2208/multi_agent_hostage_rescue)
 
 ## Project Description 
 ## Overview
@@ -66,11 +66,12 @@ This project will be completed using AIP process with the involvement of 3 progr
    * [Phase 1 Video](https://drive.google.com/file/d/1j9FvWYJ_o5ee0BTNtfcTjndG6ISZVPU-/view)
    * [UML Class Diagram Phase 1](https://drive.google.com/file/d/1heAoCuE7eX8_rLSVcIel38kI9LPRAprV/view?usp=share_link)
    * [Activity Diagram Phase 1](https://drive.google.com/file/d/1A6i3RmnGnbHXjkOn1xPDj8RQZXLSRa0C/view?usp=share_link)
-   * [UML Class Diagram Phase 2](#generating-documentation)
+   * [UML Class Diagram Phase 2](https://drive.google.com/file/d/1heAoCuE7eX8_rLSVcIel38kI9LPRAprV/view?usp=share_link)
    * [Activity Diagram Phase 2](https://drive.google.com/file/d/1A6i3RmnGnbHXjkOn1xPDj8RQZXLSRa0C/view?usp=share_link))
+   * [UML Class Diagram Phase 3](https://drive.google.com/file/d/10neP4-kefrdm9JZemIQ7UxlAcjGFNRh6/view?usp=sharing)
+   * [Activity Diagram Phase 3](https://drive.google.com/file/d/1A6i3RmnGnbHXjkOn1xPDj8RQZXLSRa0C/view?usp=share_link))
    * [Quad Chart](https://drive.google.com/file/d/1Q7Ae7BqAT_y9z2TzFeA78kWwCRC0aNpY/view?usp=share_link)
-   * [Video Demonstration](#uml-class-diagram)
-   * [](#known-issues)
+   * [Video Demonstration](https://drive.google.com/file/d/11y6rLKJ2T99eKg7-FuD8RTrhfBooOxpO/view?usp=share_link)
 
 ## Sprint Planning Notes
 The below link contains combined notes of sprint 1,2 and 3.
@@ -86,29 +87,32 @@ The below link contains combined notes of sprint 1,2 and 3.
 
 
 ## Static Code analysis
-* Cppcheck results can be found [here](https://github.com/mjoshi07/project_finder/blob/dev_phase2/results/cppcheck.txt)
-* Cpplint results can be found [here](https://github.com/mjoshi07/project_finder/blob/dev_phase2/results/cpplint.txt)
+* Cppcheck results can be found in results folder
+* Cpplint results can be found in results folder
 ## How to Run the ROS Package
-### Build Instructions
+### Build Instructions and running package
 ```
-cd <your_ROS2_ws>/src
-git clone https://github.com/mahimaarora2208/multi_agent_hostage_rescue.git
+cd <your_catkin_ws>/src
+https://github.com/mahimaarora2208/multi_agent_search_rescue
 cd ..   
-rosdep install -i --from-path src --rosdistro galactic -y
-colcon build --packages-select multi_agent_hostage_rescue
-source . install/setup.bash
-source ~/<your ROS2 installation>/opt/ros/galactic/setup.bash
+rosdep install -i --from-path src --rosdistro noetic -y
+catkin_make
+source devel/setup.bash
+
+roslaunch multi_agent_hostage_rescue main.launch
+
+```
+Open a new terminal and source it. To run the finder node:
+
+```
+rosrun multi_agent_hostage_rescue finder
 ```
 
 ### ROS Run TESTS
 Run the following commands to test your test cases:
 ```
-colcon build --packages-select multi_agent_hostage_rescue
-source install/setup.bash
-colcon test --packages-select multi_agent_hostage_rescue
-colcon test --event-handlers console_direct+ --packages-select multi_agent_hostage_rescue 
-colcon test-result --test-result-base build/multi_agent_hostage_rescue
-echo $?
+catkin_make run_tests -i
+
 ```
 
 ## To Generate and Check code coverage
