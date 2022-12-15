@@ -44,13 +44,14 @@
  *
  */
 
+#include <ros/ros.h>
 #include <gtest/gtest.h>
-
 #include <memory>
 
 #include <utility>
 
 // #include <rclcpp/rclcpp.h>
+std::shared_ptr<ros::NodeHandle> nh;
 
 // ----------------------------------------------------------------
 // TEST DEFINITIONS LEVEL 1 (gtest)
@@ -118,4 +119,11 @@ TEST(ROS_Functionality, publisher_test) {
 TEST(ROS_Functionality, subscriber_test) {
   bool sub_chatter = true;
   EXPECT_TRUE(sub_chatter);
+}
+
+int main(int argc, char** argv) {
+  ros::init(argc, argv, "main_rostest");
+  nh.reset(new ros::NodeHandle);
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }

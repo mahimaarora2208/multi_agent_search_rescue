@@ -118,17 +118,19 @@ catkin_package(
 ## Build ##
 ###########
 
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
+
+# add_library(threats src/threats.cpp)
+# add_library(finder src/swat.cpp)
+
+
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
 include
   ${catkin_INCLUDE_DIRS}
 )
-include_directories(
- include
-  ${catkin_INCLUDE_DIRS}
-  # ${OpenCV_INCLUDE_DIRS}
-)
+
 
 add_executable(finder src/main.cpp src/swat.cpp )
 target_link_libraries(finder ${catkin_LIBRARIES})
@@ -220,3 +222,30 @@ target_link_libraries(threats ${catkin_LIBRARIES})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
+# Add rostest gtest 
+
+#############
+## Testing ##
+#############
+
+if(CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+  add_rostest_gtest(main_rostest
+    test/main_test.test
+    test/test.cpp
+    src/threats.cpp
+    src/swat.cpp
+    # test/navigation_test.cpp
+    # test/detect_object_test.cpp
+    # test/grasp_object_test.cpp
+    # test/object_spawner_test.cpp
+  )
+
+  target_link_libraries(main_rostest
+    ${catkin_LIBRARIES}
+
+  )
+  add_dependencies( main_rostest finder ${catkin_EXPORTED_TARGETS} )
+endif()

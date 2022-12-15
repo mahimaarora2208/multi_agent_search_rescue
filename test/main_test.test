@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <test pkg="multi_agent_search_rescue" test-name="main_rostest"  type="main_rostest"/>
+</launch>
