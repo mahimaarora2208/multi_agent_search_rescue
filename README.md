@@ -66,11 +66,12 @@ This project will be completed using AIP process with the involvement of 3 progr
    * [Phase 1 Video](https://drive.google.com/file/d/1j9FvWYJ_o5ee0BTNtfcTjndG6ISZVPU-/view)
    * [UML Class Diagram Phase 1](https://drive.google.com/file/d/1heAoCuE7eX8_rLSVcIel38kI9LPRAprV/view?usp=share_link)
    * [Activity Diagram Phase 1](https://drive.google.com/file/d/1A6i3RmnGnbHXjkOn1xPDj8RQZXLSRa0C/view?usp=share_link)
-   * [UML Class Diagram Phase 2](#generating-documentation)
+   * [UML Class Diagram Phase 2](https://drive.google.com/file/d/1heAoCuE7eX8_rLSVcIel38kI9LPRAprV/view?usp=share_link)
    * [Activity Diagram Phase 2](https://drive.google.com/file/d/1A6i3RmnGnbHXjkOn1xPDj8RQZXLSRa0C/view?usp=share_link))
+   * [UML Class Diagram Phase 3](https://drive.google.com/file/d/10neP4-kefrdm9JZemIQ7UxlAcjGFNRh6/view?usp=sharing)
+   * [Activity Diagram Phase 3](https://drive.google.com/file/d/1A6i3RmnGnbHXjkOn1xPDj8RQZXLSRa0C/view?usp=share_link))
    * [Quad Chart](https://drive.google.com/file/d/1Q7Ae7BqAT_y9z2TzFeA78kWwCRC0aNpY/view?usp=share_link)
-   * [Video Demonstration](#uml-class-diagram)
-   * [](#known-issues)
+   * [Video Demonstration](https://drive.google.com/file/d/11y6rLKJ2T99eKg7-FuD8RTrhfBooOxpO/view?usp=share_link)
 
 ## Sprint Planning Notes
 The below link contains combined notes of sprint 1,2 and 3.
@@ -86,8 +87,8 @@ The below link contains combined notes of sprint 1,2 and 3.
 
 
 ## Static Code analysis
-* Cppcheck results can be found [here](https://github.com/mjoshi07/project_finder/blob/dev_phase2/results/cppcheck.txt)
-* Cpplint results can be found [here](https://github.com/mjoshi07/project_finder/blob/dev_phase2/results/cpplint.txt)
+* Cppcheck results can be found in results folder
+* Cpplint results can be found in results folder
 ## How to Run the ROS Package
 ### Build Instructions
 ```
